@@ -1,6 +1,7 @@
 {
-  "name": "std-react-app",
+  "name": "todolist",
   "version": "0.1.0",
+  "homepage": "https://shsalman114.github.io/TodoList",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -15,6 +16,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "TodoList -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
