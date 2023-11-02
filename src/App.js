@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Todos from "./components/Todos";
-import Header from "./components/Layout/Header";
+import Header from "./components/Header";
 import AddTodo from "./components/AddTodo";
 import { v4 as uuidv4 } from "uuid";
+import './App.css'
+
 class App extends Component {
   state = {
     todos: [
@@ -56,7 +58,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">
           <Header />
           <AddTodo addTodo={this.addTodo} />
           <Todos
