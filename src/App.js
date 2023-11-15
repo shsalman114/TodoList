@@ -8,24 +8,14 @@ import './App.css'
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: uuidv4(),
-        title: "take out the trash",
-        completed: false,
-      },
-      {
-        id: uuidv4(),
-        title: "Wash the bike",
-        completed: false,
-      },
-      {
-        id: uuidv4(),
-        title: "Buy milk from the store",
-        completed: false,
-      },
-    ],
+    todos: []
   };
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
+      .then(res => {return  res.json() })
+      .then(data => this.setState({todos: data}))
+  }
 
   markComplete = (id) => {
     this.setState({
